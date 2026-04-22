@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.everyonepick.feature.home.HomeRoute
+import com.everyonepick.feature.main.MainRoute
 import com.everyonepick.feature.settings.SettingsRoute
 
 @Composable
@@ -15,11 +15,11 @@ fun EveryonePickNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = EveryonePickDestination.Home.route,
+        startDestination = EveryonePickDestination.Main.route,
         modifier = modifier,
     ) {
-        composable(EveryonePickDestination.Home.route) {
-            HomeRoute(
+        composable(EveryonePickDestination.Main.route) {
+            MainRoute(
                 onOpenSettings = {
                     navController.navigate(EveryonePickDestination.Settings.route) {
                         launchSingleTop = true
@@ -35,4 +35,3 @@ fun EveryonePickNavHost(
         }
     }
 }
-

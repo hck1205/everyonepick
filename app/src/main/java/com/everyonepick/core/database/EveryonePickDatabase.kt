@@ -4,11 +4,14 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [QuickNoteEntity::class],
+    entities = [
+        VotePollEntity::class,
+        VoteOptionEntity::class,
+        VoteSelectionEntity::class,
+    ],
     version = 1,
     exportSchema = true,
 )
 abstract class EveryonePickDatabase : RoomDatabase() {
-    abstract fun quickNoteDao(): QuickNoteDao
+    abstract fun voteDao(): VoteDao
 }
-

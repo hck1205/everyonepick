@@ -14,20 +14,15 @@ Structured Android starter for a first native app, optimized for an experienced 
 
 ## Structure
 
-This starter stays in a single `app` module to keep the first project approachable, but the package boundaries are already separated so you can split them into real Gradle modules later without rewriting the app shape.
+This starter now uses a small multi-module layout so the app entry layer, vote domain, and reusable core pieces can evolve independently.
 
-- `core/data`: repository contracts and implementations
-- `core/data/local`: Room-backed local cache and write coordination
-- `core/data/remote`: Retrofit API and remote DTOs
-- `core/database`: Room entities, DAO, database
-- `core/datastore`: app-level preferences
+- `app`: application shell, navigation, settings, datastore, and app-wide state
+- `core/common`: shared DI qualifiers and cross-cutting utilities
+- `core/data`: repository contracts plus remote/local implementations
+- `core/database`: Room entities, DAO, database, and database DI
 - `core/designsystem`: theme and design tokens
-- `core/di`: Hilt modules
 - `core/model`: domain models
-- `core/navigation`: routes and `NavHost`
-- `core/ui`: app root and global app state
 - `feature/main`: app entry feature that can later evolve into a feed or dashboard
-- `feature/settings`: sample feature with preference-driven theming
 - `feature/vote`: the current primary domain feature
 
 ## What Is Included

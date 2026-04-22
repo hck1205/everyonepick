@@ -29,7 +29,7 @@ class VoteViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            voteRepository.ensureSeedData()
+            voteRepository.syncPolls()
         }
     }
 
@@ -45,4 +45,3 @@ class VoteViewModel @Inject constructor(
         }
     }
 }
-

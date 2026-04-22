@@ -64,6 +64,7 @@ ksp {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.okhttp.bom))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
@@ -83,6 +84,9 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     implementation(libs.hilt.android)
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
 
     ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.compiler)

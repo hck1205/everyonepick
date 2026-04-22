@@ -13,6 +13,8 @@ datastore = "1.2.1"
 hilt = "2.59.2"
 androidxHilt = "1.3.0"
 junit4 = "4.13.2"
+okhttp = "5.3.0"
+retrofit = "3.0.0"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -38,6 +40,10 @@ androidx-room-runtime = { group = "androidx.room", name = "room-runtime", versio
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
+okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -6,11 +6,10 @@ import kotlinx.coroutines.flow.Flow
 interface VoteRepository {
     val polls: Flow<List<VotePoll>>
 
-    suspend fun ensureSeedData()
+    suspend fun syncPolls()
 
     suspend fun submitVote(
         pollId: Long,
         optionId: Long,
     )
 }
-

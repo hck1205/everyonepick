@@ -17,6 +17,8 @@ Structured Android starter for a first native app, optimized for an experienced 
 This starter stays in a single `app` module to keep the first project approachable, but the package boundaries are already separated so you can split them into real Gradle modules later without rewriting the app shape.
 
 - `core/data`: repository contracts and implementations
+- `core/data/local`: Room-backed local cache and write coordination
+- `core/data/remote`: Retrofit API and remote DTOs
 - `core/database`: Room entities, DAO, database
 - `core/datastore`: app-level preferences
 - `core/designsystem`: theme and design tokens
@@ -31,10 +33,12 @@ This starter stays in a single `app` module to keep the first project approachab
 ## What Is Included
 
 - A vote-first main screen backed by Room
+- A vote data layer split into remote/local/repository responsibilities
 - A dedicated vote domain feature that can later move behind a richer main screen
 - A settings screen backed by DataStore
 - Theme mode switching: system, light, dark
 - DI wiring with Hilt
+- Retrofit and OkHttp wiring with a fake in-app API interceptor until a real backend exists
 - Navigation wiring
 - A small unit test
 

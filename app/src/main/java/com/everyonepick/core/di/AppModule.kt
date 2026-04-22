@@ -2,7 +2,7 @@ package com.everyonepick.core.di
 
 import android.content.Context
 import androidx.room.Room
-import com.everyonepick.core.data.OfflineVoteRepository
+import com.everyonepick.core.data.DefaultVoteRepository
 import com.everyonepick.core.data.VoteRepository
 import com.everyonepick.core.database.EveryonePickDatabase
 import com.everyonepick.core.database.VoteDao
@@ -19,7 +19,7 @@ import javax.inject.Singleton
 abstract class RepositoryModule {
     @Binds
     abstract fun bindVoteRepository(
-        repository: OfflineVoteRepository,
+        repository: DefaultVoteRepository,
     ): VoteRepository
 }
 
@@ -42,3 +42,4 @@ object DatabaseModule {
         database: EveryonePickDatabase,
     ): VoteDao = database.voteDao()
 }
+

@@ -1,4 +1,4 @@
-package com.everyonepick.core.datastore
+package com.everyonepick.core.preferences
 
 enum class ThemeMode(val storageValue: String) {
     SYSTEM("system"),

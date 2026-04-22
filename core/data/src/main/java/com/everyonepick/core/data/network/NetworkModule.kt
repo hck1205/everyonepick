@@ -1,10 +1,11 @@
-package com.everyonepick.core.data.remote
+package com.everyonepick.core.data.network
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,13 +24,15 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        fakeVoteApiInterceptor: FakeVoteApiInterceptor,
+        @NetworkInterceptors interceptors: Set<@JvmSuppressWildcards Interceptor>,
         httpLoggingInterceptor: HttpLoggingInterceptor,
-    ): OkHttpClient =
-        OkHttpClient.Builder()
-            .addInterceptor(fakeVoteApiInterceptor)
+    ): OkHttpClient {
+        val builder = OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .build()
+
+        interceptors.forEach(builder::addInterceptor)
+        return builder.build()
+    }
 
     @Provides
     @Singleton
@@ -41,11 +44,5 @@ object NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
-    @Provides
-    @Singleton
-    fun provideVoteApi(
-        retrofit: Retrofit,
-    ): VoteApi = retrofit.create(VoteApi::class.java)
 }
 

@@ -24,12 +24,14 @@ This starter stays in a single `app` module to keep the first project approachab
 - `core/model`: domain models
 - `core/navigation`: routes and `NavHost`
 - `core/ui`: app root and global app state
-- `feature/home`: sample feature with local persistence
+- `feature/main`: app entry feature that can later evolve into a feed or dashboard
 - `feature/settings`: sample feature with preference-driven theming
+- `feature/vote`: the current primary domain feature
 
 ## What Is Included
 
-- A notes-like home screen backed by Room
+- A vote-first main screen backed by Room
+- A dedicated vote domain feature that can later move behind a richer main screen
 - A settings screen backed by DataStore
 - Theme mode switching: system, light, dark
 - DI wiring with Hilt
@@ -52,4 +54,3 @@ This starter stays in a single `app` module to keep the first project approachab
 
 - The repository includes Gradle wrapper scripts and properties. If Gradle distribution files are not already cached locally, the first sync will download them.
 - The machine that generated this project had `JAVA_HOME` still pointing to JDK 8. If CLI builds fail, switch to JDK 17 or use Android Studio's bundled JBR.
-

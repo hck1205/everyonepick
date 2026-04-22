@@ -2,10 +2,10 @@ package com.everyonepick.core.di
 
 import android.content.Context
 import androidx.room.Room
-import com.everyonepick.core.data.NoteRepository
-import com.everyonepick.core.data.OfflineNoteRepository
+import com.everyonepick.core.data.OfflineVoteRepository
+import com.everyonepick.core.data.VoteRepository
 import com.everyonepick.core.database.EveryonePickDatabase
-import com.everyonepick.core.database.QuickNoteDao
+import com.everyonepick.core.database.VoteDao
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -18,9 +18,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
     @Binds
-    abstract fun bindNoteRepository(
-        repository: OfflineNoteRepository,
-    ): NoteRepository
+    abstract fun bindVoteRepository(
+        repository: OfflineVoteRepository,
+    ): VoteRepository
 }
 
 @Module
@@ -38,7 +38,7 @@ object DatabaseModule {
         ).build()
 
     @Provides
-    fun provideQuickNoteDao(
+    fun provideVoteDao(
         database: EveryonePickDatabase,
-    ): QuickNoteDao = database.quickNoteDao()
+    ): VoteDao = database.voteDao()
 }

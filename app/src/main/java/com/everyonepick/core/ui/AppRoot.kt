@@ -9,9 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.rememberNavController
-import com.everyonepick.core.datastore.ThemeMode
 import com.everyonepick.core.designsystem.theme.EveryonePickTheme
 import com.everyonepick.core.navigation.EveryonePickNavHost
+import com.everyonepick.core.preferences.ThemeMode
 
 @Composable
 fun AppRoot(

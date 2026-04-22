@@ -2,8 +2,8 @@ package com.everyonepick.core.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.everyonepick.core.datastore.ThemeMode
-import com.everyonepick.core.datastore.UserPreferencesRepository
+import com.everyonepick.core.preferences.ThemeMode
+import com.everyonepick.core.preferences.UserPreferencesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.SharingStarted
@@ -26,4 +26,3 @@ class AppStateViewModel @Inject constructor(
             initialValue = AppStateUiState(),
         )
 }
-

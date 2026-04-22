@@ -1,5 +1,11 @@
 package com.everyonepick.core.data.remote
 
+import com.everyonepick.core.data.network.NetworkInterceptors
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import dagger.multibindings.IntoSet
 import java.io.IOException
 import javax.inject.Inject
 import okhttp3.Interceptor
@@ -75,3 +81,13 @@ class FakeVoteApiInterceptor @Inject constructor() : Interceptor {
     }
 }
 
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class VoteRemoteModule {
+    @Binds
+    @IntoSet
+    @NetworkInterceptors
+    abstract fun bindFakeVoteApiInterceptor(
+        interceptor: FakeVoteApiInterceptor,
+    ): Interceptor
+}

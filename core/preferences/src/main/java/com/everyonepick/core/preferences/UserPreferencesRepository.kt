@@ -1,13 +1,14 @@
-package com.everyonepick.core.datastore
+package com.everyonepick.core.preferences
 
 import android.content.Context
 import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStoreFile
-import androidx.datastore.preferences.core.PreferenceDataStoreFactory
+import com.everyonepick.core.common.IoDispatcher
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import javax.inject.Inject
@@ -18,7 +19,6 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
-import com.everyonepick.core.common.IoDispatcher
 
 @Singleton
 class UserPreferencesRepository @Inject constructor(
@@ -59,3 +59,4 @@ class UserPreferencesRepository @Inject constructor(
         const val USER_PREFERENCES_FILE = "user_preferences.preferences_pb"
     }
 }
+

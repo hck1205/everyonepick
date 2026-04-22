@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.everyonepick.core.datastore.ThemeMode
+import com.everyonepick.core.preferences.ThemeMode
 
 @Composable
 fun SettingsRoute(

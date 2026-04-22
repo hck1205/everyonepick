@@ -73,7 +73,6 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.hilt.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -83,7 +82,9 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(project(":core:common"))
     implementation(project(":core:designsystem"))
+    implementation(project(":core:preferences"))
     implementation(project(":feature:main"))
+    implementation(project(":feature:settings"))
 
     ksp(libs.hilt.compiler)
 

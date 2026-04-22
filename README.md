@@ -16,20 +16,25 @@ Structured Android starter for a first native app, optimized for an experienced 
 
 This starter now uses a small multi-module layout so the app entry layer, vote domain, and reusable core pieces can evolve independently.
 
-- `app`: application shell, navigation, settings, datastore, and app-wide state
+- `app`: application shell, navigation, and app-wide state
 - `core/common`: shared DI qualifiers and cross-cutting utilities
 - `core/data`: repository contracts plus remote/local implementations
+- `core:data/network`: shared network stack used by feature-specific APIs
 - `core/database`: Room entities, DAO, database, and database DI
 - `core/designsystem`: theme and design tokens
 - `core/model`: domain models
+- `core:preferences`: app preference storage and theme preference models
 - `feature/main`: app entry feature that can later evolve into a feed or dashboard
+- `feature/settings`: dedicated settings feature module
 - `feature/vote`: the current primary domain feature
 
 ## What Is Included
 
 - A vote-first main screen backed by Room
 - A vote data layer split into remote/local/repository responsibilities
+- A reusable shared network layer inside `core:data`
 - A dedicated vote domain feature that can later move behind a richer main screen
+- A dedicated settings feature module
 - A settings screen backed by DataStore
 - Theme mode switching: system, light, dark
 - DI wiring with Hilt
